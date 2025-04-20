@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":analytics-api"))
+    implementation(project(":feature-flags-api"))
     testImplementation(kotlin("test"))
 }
 

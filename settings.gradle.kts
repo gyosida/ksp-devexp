@@ -4,4 +4,4 @@ plugins {
 rootProject.name = "ksp-devexp"
 include("before-ksp")
 include("ksp-processors")
-include("analytics-api")
+include("feature-flags-api")
