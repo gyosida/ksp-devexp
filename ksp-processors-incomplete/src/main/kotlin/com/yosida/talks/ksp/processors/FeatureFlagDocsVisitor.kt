@@ -7,7 +7,7 @@ import com.google.devtools.ksp.symbol.KSNode
 import com.google.devtools.ksp.visitor.KSDefaultVisitor
 
 class FeatureFlagDocsVisitor(
-    val logger: KSPLogger
+    private val logger: KSPLogger
 ) : KSDefaultVisitor<Unit, String>() {
 
     override fun visitClassDeclaration(classDeclaration: KSClassDeclaration, data: Unit): String {
