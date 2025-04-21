@@ -5,3 +5,4 @@ rootProject.name = "ksp-devexp"
 include("before-ksp")
 include("ksp-processors")
 include("feature-flags-api")
+include("after-ksp")
