@@ -24,6 +24,7 @@ class FeatureFlagDocsVisitor(
         logger.info("Creating documentation content for ${enumClassDeclaration.simpleName.asString()}")
         val enumEntries = enumClassDeclaration.getEnumEntries()
         return """
+    |# Feature flags
     |## ${enumClassDeclaration.simpleName.asString()} group
     || Id | Name | Description |
     ||----|------|-------------|

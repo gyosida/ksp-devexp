@@ -12,7 +12,7 @@ repositories {
 
 dependencies {
     implementation(project(":feature-flags-api"))
-    implementation(project(":ksp-processors"))
+//    implementation(project(":ksp-processors"))
     ksp(project(":ksp-processors"))
     testImplementation(kotlin("test"))
 }

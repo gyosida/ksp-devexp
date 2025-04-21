@@ -25,6 +25,7 @@ class FeatureFlagDocsVisitor(
         val enumEntries = enumClassDeclaration.getEnumEntries()
         // FIXME: Add table rows of all enum entries
         return """
+    |# Feature flags
     |## ${enumClassDeclaration.simpleName.asString()} group
     || Id | Name | Description |
     ||----|------|-------------|
