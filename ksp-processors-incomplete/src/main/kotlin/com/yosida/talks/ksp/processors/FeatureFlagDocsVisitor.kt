@@ -7,7 +7,7 @@ import com.google.devtools.ksp.symbol.KSNode
 import com.google.devtools.ksp.visitor.KSDefaultVisitor
 
 class FeatureFlagDocsVisitor(
-    private val logger: KSPLogger
+    val logger: KSPLogger
 ) : KSDefaultVisitor<Unit, String>() {
 
     override fun visitClassDeclaration(classDeclaration: KSClassDeclaration, data: Unit): String {
@@ -23,11 +23,12 @@ class FeatureFlagDocsVisitor(
     private fun createDocumentationContent(enumClassDeclaration: KSClassDeclaration): String {
         logger.info("Creating documentation content for ${enumClassDeclaration.simpleName.asString()}")
         val enumEntries = enumClassDeclaration.getEnumEntries()
+        // FIXME: Add table rows of all enum entries
         return """
     |## ${enumClassDeclaration.simpleName.asString()} group
     || Id | Name | Description |
     ||----|------|-------------|
-    |${enumEntries.map { it.createFeatureFlagRowContent() }.joinToString("\n")}
+    | // TODO add rows for each enum entry
 """.trimMargin()
     }
 
