@@ -1,5 +1,6 @@
 package com.gyosida.talks.ksp.processors
 
+import com.google.devtools.ksp.processing.Dependencies
 import com.google.devtools.ksp.processing.Resolver
 import com.google.devtools.ksp.processing.SymbolProcessor
 import com.google.devtools.ksp.processing.SymbolProcessorEnvironment
@@ -27,6 +28,21 @@ class FeatureFlagProcessor(private val environment: SymbolProcessorEnvironment) 
 
         resolvedSymbols.forEach { it.accept(isEnabledFeatureFlagVisitor, Unit) }
 
+        val documentationContent = resolvedSymbols.map { it.accept(FeatureFlagDocsVisitor(logger), Unit) }
+            .joinToString("\n\n")
+
+        if (documentationContent.isNotBlank()) {
+            generateDocumentation(documentationContent)
+        }
         return (symbols - resolvedSymbols.toSet()).toList()
+    }
+
+    private fun generateDocumentation(content: String) {
+        val filePath = "docs/FeatureFlagDocs"
+        environment.codeGenerator.createNewFileByPath(
+            Dependencies(true),
+            path = filePath,
+            extensionName = "md"
+        ).use { it.write(content.toByteArray()) }
     }
 }

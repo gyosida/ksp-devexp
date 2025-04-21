@@ -6,5 +6,4 @@ interface FeatureFlag {
      */
     val id: String
 
-    fun getDescription(): String
 }
