@@ -1,4 +1,4 @@
-package com.gyosida.talks.ksp.after_ksp
+package com.yosida.talks.ksp.after_ksp
 
 import com.yosida.talks.ksp.analytics_api.FeatureFlag
 import com.yosida.talks.ksp.analytics_api.FeatureFlagController

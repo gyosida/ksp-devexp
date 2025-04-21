@@ -1,4 +1,4 @@
-package com.gyosida.talks.ksp.processors
+package com.yosida.talks.ksp.processors
 
 import com.google.devtools.ksp.processing.SymbolProcessor
 import com.google.devtools.ksp.processing.SymbolProcessorEnvironment

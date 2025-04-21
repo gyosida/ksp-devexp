@@ -1,4 +1,4 @@
-package com.gyosida.talks.ksp.processors
+package com.yosida.talks.ksp.processors
 
 import com.google.devtools.ksp.processing.KSPLogger
 import com.google.devtools.ksp.symbol.ClassKind
