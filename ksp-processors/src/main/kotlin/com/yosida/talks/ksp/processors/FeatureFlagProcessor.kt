@@ -39,10 +39,14 @@ class FeatureFlagProcessor(private val environment: SymbolProcessorEnvironment) 
 
     private fun generateDocumentation(content: String) {
         val filePath = "docs/FeatureFlagDocs"
+        val newContent = """
+            |# Feature Flag Documentation
+            |$content
+""".trimMargin()
         environment.codeGenerator.createNewFileByPath(
             Dependencies(true),
             path = filePath,
             extensionName = "md"
-        ).use { it.write(content.toByteArray()) }
+        ).use { it.write(newContent.toByteArray()) }
     }
 }
