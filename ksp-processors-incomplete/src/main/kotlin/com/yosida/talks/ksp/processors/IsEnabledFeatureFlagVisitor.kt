@@ -11,7 +11,6 @@ class IsEnabledFeatureFlagVisitor(
     private val logger: KSPLogger
 ) : KSVisitorVoid() {
     override fun visitClassDeclaration(classDeclaration: KSClassDeclaration, data: Unit) {
-        super.visitClassDeclaration(classDeclaration, data)
         logger.info("Visiting class declaration: ${classDeclaration.simpleName.asString()}")
         classDeclaration.getEnumEntries().forEach {
             logger.info("Creating IsEnabledClass for enum entry: ${it.simpleName.asString()}")

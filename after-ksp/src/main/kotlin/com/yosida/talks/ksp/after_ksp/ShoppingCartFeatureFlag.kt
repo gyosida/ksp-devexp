@@ -15,12 +15,3 @@ enum class ShoppingCartFeatureFlag(override val id: String) : FeatureFlag {
     )
     GridCartList("grid_cart_list");
 }
-
-@GenFeatureFlag
-enum class OnboardingFeatureFlag(override val id: String) : FeatureFlag {
-    @FeatureFlagDescriptor(description = "Enables the new onboarding experience.")
-    NewOnboarding("new_onboarding"),
-
-    @FeatureFlagDescriptor(description = "Enables the tutorial for the new onboarding experience.")
-    NewOnboardingTutorial("new_onboarding_tutorial");
-}
